@@ -1,6 +1,5 @@
 import csv
 import argparse
-import tempfile
 from pathlib import Path
 from datetime import datetime
 from typing import Any, TypedDict, get_type_hints
