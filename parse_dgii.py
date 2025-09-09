@@ -8,17 +8,6 @@ from typing import Any, TypedDict, get_type_hints
 CODIGO_EMPRESA = 1
 
 
-TYPE_MAPPINGS = {
-    "int": int,
-    "bigint": int,
-    "numeric": float,
-    "varchar": str,
-    "date": str,
-    "datetime": str,
-    "bit": bool,
-}
-
-
 class Line(TypedDict):
     name: str
     value: Any | None
@@ -335,6 +324,7 @@ class Paginacion(TypedDict):
 
 def load_exel(file_path: str):
     import openpyxl
+
     # Load the workbook and select the active worksheet
     workbook = openpyxl.load_workbook(file_path, data_only=True, read_only=True)
     sheet = workbook.active
@@ -975,7 +965,6 @@ BEGIN TRANSACTION
         procesar_descuento_recargo(lines)
         procesar_paginacion(lines)
 
-
     with open("res.sql", "a") as f:
         f.write(
             """\
@@ -997,4 +986,3 @@ END CATCH"""
 
 if __name__ == "__main__":
     main()
-
