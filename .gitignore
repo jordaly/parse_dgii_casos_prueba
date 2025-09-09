@@ -206,3 +206,12 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 editor_session.json
+
+*.xlsx
+*.csv
+*.sql
+
+casos_prueba_dgii.xlsx
+res.csv
+res.sql
+
